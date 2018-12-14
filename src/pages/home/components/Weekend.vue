@@ -57,7 +57,6 @@ export default {
     line-height : .8rem
     background : #eeeeee
     text-indent : .2rem
-    margin-top : .2rem
   .item-img-wapper
     height: 0
     overflow : hidden

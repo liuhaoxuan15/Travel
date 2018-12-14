@@ -2,7 +2,7 @@
   <div class="icons">
     <swiper :options="swiperOption">
       <swiper-slide :key="index" v-for="(page, index) of pages">
-        <div class="icon" v-for="item of page" :key="item.id">
+        <div class="icon" v-for="item of list" :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" alt="">
           </div>
@@ -16,54 +16,20 @@
 <script>
 export default{
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconList: [{
-        id: '01',
-        desc: '景点门票',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'
-      }, {
-        id: '02',
-        desc: '北京必游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'
-      }, {
-        id: '03',
-        desc: '一日游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
-      }, {
-        id: '04',
-        desc: '大牌立减',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1811/5e/c640ec3b7d7ae802.png'
-      }, {
-        id: '05',
-        desc: '景点门票',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'
-      }, {
-        id: '06',
-        desc: '北京必游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'
-      }, {
-        id: '07',
-        desc: '一日游',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
-      }, {
-        id: '08',
-        desc: '大牌立减',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1811/5e/c640ec3b7d7ae802.png'
-      }, {
-        id: '09',
-        desc: '大牌立减',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1811/5e/c640ec3b7d7ae802.png'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
