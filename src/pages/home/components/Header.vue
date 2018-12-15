@@ -7,10 +7,12 @@
           <span class="iconfont">&#xe632;</span>
           输入城市/景点/游玩/主题
         </div>
-        <div class="header-right">
-          {{this.city}}
-          <span class="iconfont city">&#xe600;</span>
+        <router-link to="/city">
+          <div class="header-right">
+            {{this.city}}
+            <span class="iconfont city">&#xe600;</span>
           </div>
+        </router-link>
     </div>
 </template>
 
@@ -27,7 +29,7 @@ export default{
 @import '~styles/varibles.styl';
   .header
     display : flex
-    line-height: .86rem
+    line-height: $headerHeight
     background: $bgColor
     color: #ffffff
     .header-left
@@ -49,6 +51,7 @@ export default{
       width: 1.24rem
       float: right
       text-align : center
+      color : white
       .city
         font-size : .2rem
 </style>
