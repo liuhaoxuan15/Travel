@@ -37,6 +37,7 @@ export default {
             }
           })
         }
+        this.list = result
       }, 100)
     }
   },
