@@ -2,7 +2,7 @@
   <div>
       <div class="title">热销推荐</div>
       <ul>
-          <li class="item border-bottom" :key="item.id" v-for="item of recommendList">
+          <li class="item border-bottom" :key="item.id" v-for="item of list">
                   <img class="item-img" :src="item.imgUrl" alt="">
               <div class="item-info">
                 <p class="item-title">{{item.title}}</p>
@@ -17,40 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '01',
-        title: '故宫',
-        desc: '337020条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg'
-      }, {
-        id: '02',
-        title: '顺景温泉',
-        desc: '773条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/fa/fa08335dde3512faa3.img.jpg_200x200_8b29ca1f.jpg'
-      }, {
-        id: '03',
-        title: '故宫',
-        desc: '337020条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg'
-      }, {
-        id: '04',
-        title: '顺景温泉',
-        desc: '773条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/fa/fa08335dde3512faa3.img.jpg_200x200_8b29ca1f.jpg'
-      }, {
-        id: '05',
-        title: '故宫',
-        desc: '337020条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg'
-      }, {
-        id: '06',
-        title: '顺景温泉',
-        desc: '773条评论',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/fa/fa08335dde3512faa3.img.jpg_200x200_8b29ca1f.jpg'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
